@@ -329,7 +329,7 @@ tools_install() {
   # COMPOSER
   #
   # Install Composer if it is not yet available.
-  if [[ ! -n "$(composer --version --no-ansi | grep 'Composer version')" ]]; then
+  if [[ ! -n "$(noroot composer --version --no-ansi | grep 'Composer version')" ]]; then
     echo "Installing Composer..."
     curl -sS "https://getcomposer.org/installer" | php
     chmod +x "composer.phar"
@@ -338,13 +338,13 @@ tools_install() {
 
   if [[ -f /vagrant/provision/github.token ]]; then
     ghtoken=`cat /vagrant/provision/github.token`
-    composer config --global github-oauth.github.com $ghtoken
+    noroot composer config --global github-oauth.github.com $ghtoken
     echo "Your personal GitHub token is set for Composer."
   fi
 
   # Update both Composer and any global packages. Updates to Composer are direct from
   # the master branch on its GitHub repository.
-  if [[ -n "$(composer --version --no-ansi | grep 'Composer version')" ]]; then
+  if [[ -n "$(noroot composer --version --no-ansi | grep 'Composer version')" ]]; then
     echo "Updating Composer..."
     COMPOSER_HOME=/usr/local/src/composer composer --no-ansi self-update --no-progress --no-interaction
     COMPOSER_HOME=/usr/local/src/composer composer --no-ansi global require --no-update --no-progress --no-interaction phpunit/phpunit:6.*
