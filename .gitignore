@@ -9,6 +9,7 @@
 # This is a file intended for hooking in a custom Vagrant configuration on up
 /Customfile
 /vvv-custom.yml
+/config/init/vvv-start-custom.conf
 
 # Allow for custom provisioning scripts that are not included with the repo
 /provision/provision-custom.sh
@@ -29,6 +30,9 @@
 
 # Ignore anything in the 'custom' directory in config
 /config/custom/*
+
+# Ignore custom gitconfig
+/config/gitconfig
 
 # Ignore the nvm git clone in the 'nvm' directory in config
 /config/nvm/
