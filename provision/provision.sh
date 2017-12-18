@@ -418,7 +418,7 @@ nginx_setup() {
             -key /etc/nginx/server-2.1.0.key \
             -out /etc/nginx/server-2.1.0.crt \
             -days 3650 \
-            -subj /CN=*.wordpress-develop.test/CN=*.wordpress.test/CN=*.wordpress-develop.dev/CN=*.wordpress.dev/CN=*.vvv.dev/CN=*.vvv.local/CN=*.vvv.localhost/CN=*.vvv.test 2>&1)"
+            -subj /CN=*.wordpress-develop.test/CN=*.wordpress.test/CN=*.wordpress-develop.dev/CN=*.wordpress.dev/CN=*.vvv.dev/CN=*.wordpress-multisite-develop.test/CN=*.wordpress-multisite-develop.dev/CN=*.vvv.local/CN=*.vvv.localhost/CN=*.vvv.test 2>&1)"
 	  echo "$vvvsigncert"
   fi
 

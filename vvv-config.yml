@@ -31,6 +31,14 @@ sites:
       - src.wordpress-develop.test
       - build.wordpress-develop.test
 
+  # The wordpress-multisite-develop configuration is useful for contributing to WordPress Multisite.
+  wordpress-multisite-develop:
+    repo: git@github.com:felixarntz/vvv-wordpress-develop.git
+    branch: multisite-setup
+    hosts:
+      - src.wordpress-multisite-develop.test
+      - build.wordpress-multisite-develop.test
+
   # The following commented out site configuration will create a standard WordPress
   # site in www/example-site/ available at http://my-example-site.dev.
   # Remember, whitespace is significant! Tabs and spaces mean different things
